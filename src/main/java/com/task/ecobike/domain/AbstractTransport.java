@@ -1,7 +1,9 @@
 package com.task.ecobike.domain;
 
+import java.util.Objects;
+
 public abstract class AbstractTransport {
-	
+
 	private String brand;
 	private String color;
 	private Integer price;
