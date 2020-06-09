@@ -29,6 +29,21 @@ public class EBike extends AbstractTransport {
                 "; " + super.getLights() + "; " + batteryCapacity +
                 "; " + super.getColor() + "; " + super.getPrice();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof EBike)) return false;
+        if (!super.equals(o)) return false;
+        EBike eBike = (EBike) o;
+        return maxSpeed.equals(eBike.maxSpeed) &&
+                batteryCapacity.equals(eBike.batteryCapacity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), maxSpeed, batteryCapacity);
+    }
 }
 
 

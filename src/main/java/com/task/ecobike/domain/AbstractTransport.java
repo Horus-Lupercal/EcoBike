@@ -44,4 +44,21 @@ public abstract class AbstractTransport {
 	public void setWeight(Integer weight) {
 		this.weight = weight;
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof AbstractTransport)) return false;
+		AbstractTransport transport = (AbstractTransport) o;
+		return brand.equals(transport.brand) &&
+				color.equals(transport.color) &&
+				price.equals(transport.price) &&
+				lights.equals(transport.lights) &&
+				weight.equals(transport.weight);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(brand, color, price, lights, weight);
+	}
 }
